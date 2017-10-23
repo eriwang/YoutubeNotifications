@@ -3,5 +3,14 @@
 
 	"name": "YoutubeNotifications",
 	"description": "Displays notifications on video change on YouTube.",
-	"version": "1.0"
+	"version": "1.0",
+
+	"permissions": [
+		"notifications"
+	],
+
+	"browser_action": {
+		"default_title": "YoutubeNotifications",
+		"default_popup": "popup.html"
+	}
 }
