@@ -4,10 +4,6 @@
 const VIDEO_TITLE_SELECTOR = "#info-contents .title";
 const VIDEO_UPLOADER_SELECTOR = "#meta-contents #owner-name";
 
-function log(text) {
-	console.log(`[YTN] ${text}`);
-}
-
 function getSingleMatchingNodeText(selector) {
 	const matchingNodes = document.querySelectorAll(selector);
 	if (matchingNodes.length != 1) {
@@ -26,27 +22,17 @@ function getVideoUploader() {
 }
 
 function main() {
-	console.log("[YTN] Successfully loaded YoutubeNotifications.");
-
-	setInterval(function() { 
-		log(getVideoTitle()); 
-	}, 1000);
+	log("Successfully loaded YoutubeNotifications.");
 
 	setInterval(function() {
-		log(getVideoUploader());
-	}, 1000);
-
-	// TODO: move to a file that can actually create the notification
-	// console.log("hello world!");
-
-	// var n = {
-	// 	type: "basic",
-	// 	iconUrl: "logo.png",
-	// 	title: "This...",
-	// 	message: "...is a test"
-	// };
-
-	// chrome.notifications.create(n);
+		const message = {
+			title: getVideoTitle(),
+			uploader: getVideoUploader()
+		};
+		log(`Sending message "${message}" to event page`);
+		
+		chrome.runtime.sendMessage(message);
+	}, 5000);
 }
 
 main();

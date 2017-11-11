@@ -9,6 +9,7 @@
 	"jquery": true,
 
 	"globals": {
-		"chrome": true
+		"chrome": true,
+		"log": true
 	}
 }

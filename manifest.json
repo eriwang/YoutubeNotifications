@@ -9,15 +9,15 @@
 		"notifications"
 	],
 
-	"browser_action": {
-		"default_title": "YoutubeNotifications",
-		"default_popup": "popup.html"
+	"background": {
+		"scripts": ["logger.js", "event_page.js"],
+		"persistent": false
 	},
 
 	"content_scripts": [
 		{
 			"matches": ["https://www.youtube.com/watch*"],
-			"js": ["main.js"]
+			"js": ["logger.js", "youtube_content_script.js"]
 		}
 	]
 }
