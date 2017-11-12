@@ -7,7 +7,7 @@ function processMessage(message) {
 		return;
 	}
 
-	log(`Received message with {title: "${message.title}", uploader: "${message.uploader}"}`);
+	log(`Received message ${JSON.stringify(message)}`);
 
 	var notification = {
 		type: "basic",

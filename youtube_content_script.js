@@ -29,7 +29,7 @@ function main() {
 			title: getVideoTitle(),
 			uploader: getVideoUploader()
 		};
-		log(`Sending message "${message}" to event page`);
+		log(`Sending message ${JSON.stringify(message)}`);
 		
 		chrome.runtime.sendMessage(message);
 	}, 5000);
