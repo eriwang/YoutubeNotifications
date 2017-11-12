@@ -10,14 +10,17 @@
 	],
 
 	"background": {
-		"scripts": ["logger.js", "event_page.js"],
+		"scripts": ["utils/logger.js",
+			"event_page/main.js"],
 		"persistent": false
 	},
 
 	"content_scripts": [
 		{
-			"matches": ["https://www.youtube.com/watch*"],
-			"js": ["logger.js", "youtube_content_script.js"]
+			"matches": ["https://www.youtube.com/*"],
+			"js": ["utils/logger.js", 
+				"content_script/video_information.js",
+				"content_script/main.js"]
 		}
 	]
 }

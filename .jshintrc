@@ -10,6 +10,7 @@
 
 	"globals": {
 		"chrome": true,
-		"log": true
+		"log": true,
+		"VideoInformation": true
 	}
 }
